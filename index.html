@@ -61,6 +61,7 @@ h1 {
 }
 
 /* CARD */
+
 .card {
   background: white;
   border-radius: 15px;
@@ -68,6 +69,12 @@ h1 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   text-align: center;
   transition: 0.2s;
+
+  display: flex;              /* ✅ THIS FIXES ALIGNMENT */
+  flex-direction: column;     /* ✅ STACKS CONTENT PROPERLY */
+  justify-content: space-between; /* ✅ PUSHES CONTENT EVENLY */
+
+  height: 340px;              /* ✅ FORCES ALL CARDS SAME SIZE */
 }
 
 .card:hover {
@@ -94,24 +101,28 @@ h1 {
 }
 
 /* EXPAND AREA (KEY FIX ✅) */
+
 .extra {
-  height: 60px; /* ✅ ensures consistent white space */
-  font-size: 13px;
-  color: #444;
-  overflow: hidden;
-  transition: 0.3s;
+  height: 70px;              /* ✅ consistent space for all cards */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* HIDDEN CONTENT */
+/* hidden content */
 .extra-content {
   opacity: 0;
-  transition: 0.3s;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
-/* SHOW ON HOVER */
+/* show on hover */
 .card:hover .extra-content {
   opacity: 1;
+  transform: translateY(0);
 }
+
 
 /* LINK */
 .map-link {
