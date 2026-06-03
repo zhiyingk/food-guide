@@ -57,7 +57,7 @@ h1 {
   padding: 25px;
 }
 
-/* CARD FIXED ✅ */
+/* CARD */
 .card {
   background: white;
   border-radius: 15px;
@@ -69,7 +69,6 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   height: 340px;
 }
 
@@ -84,7 +83,7 @@ h1 {
   border-radius: 10px;
 }
 
-/* EXTRA SECTION */
+/* EXTRA */
 .extra {
   height: 70px;
   display: flex;
@@ -95,7 +94,7 @@ h1 {
 .extra-content {
   opacity: 0;
   transform: translateY(10px);
-  transition: all 0.3s ease;
+  transition: 0.3s;
   font-size: 13px;
 }
 
@@ -110,10 +109,6 @@ h1 {
   color: #ff6b3d;
   text-decoration: none;
   font-weight: bold;
-}
-
-.map-link:hover {
-  text-decoration: underline;
 }
 </style>
 </head>
@@ -144,7 +139,7 @@ h1 {
     <div class="extra">
       <div class="extra-content">
         📍 City Plaza
-        <a href="https://maps.google.com/?q=Arnold's+Fried+Chicken+City+Plaza" target="_blank" class="map-linkss="card meal">
+        <a href="https://maps.google.com/?q=Arnold's+Fried+Chicken+City+Plaza" target="_blank" class="<div class="card meal">
     <img src="https://images.squarespace-cdn.com/content/v1/6811e5019be9160a43c4faa6/1746003202459-6N661A3CYE1OUWPK071W/lau+wang+claypot.png?format=2500w">
     <h3>Lau Wang</h3>
     <p>Claypot dishes</p>
@@ -157,7 +152,7 @@ h1 {
     </div>
   </div>
 
-  <!-- SNACK -->
+  <!-- DOUGH CULTURE -->
   <div class="card snack">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqTbtQPwVU-3G1gvMRp2pmP9EMSzwzbkFhgw&s">
     <h3>Dough Culture</h3>
@@ -171,7 +166,7 @@ h1 {
     </div>
   </div>
 
-  <!-- DRINKS -->
+  <!-- TWO SISTERS -->
   <div class="card beverage">
     <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFgHOFg0PaAT_fhh8GkL33i1TGcE_oX_LqYLNg-Zlzyoc6WUuxAt9xQMPQGG7rNsTI2KMnuhorl5Sn25zecSEC_HvasCiERA-t3U1-05EHX_gsRsXUY0SmbU7WjqHN911p35PIU=s1360-w1360-h1020-rw">
     <h3>Two Sisters' Smoothie</h3>
@@ -185,6 +180,7 @@ h1 {
     </div>
   </div>
 
+  <!-- BIG SHORT -->
   <div class="card beverage">
     <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGvzJlg6apJjofgDMuVuFpjorwS3UV4IxdeM2pZmwZ1N38I19zOuq4g9DtW9gqVzmSGVOeIEadhK4BAMGWlNnfAuHfvgC6-6FX5o_4O3LajK6SYDBxk2EckkLSkCQCayVuM3FMTYwYwdm6P=s1360-w1360-h1020-rw">
     <h3>Big Short Coffee</h3>
@@ -198,6 +194,7 @@ h1 {
     </div>
   </div>
 
+  <!-- OLD TEA HUT -->
   <div class="card beverage">
     <img src="https://images.deliveryhero.io/image/fd-sg/LH/y1hh-listing.jpg">
     <h3>Old Tea Hut</h3>
@@ -216,11 +213,8 @@ h1 {
 <script>
 function filterFood(category) {
   let cards = document.querySelectorAll('.card');
-
   cards.forEach(card => {
-    if (category === 'all') {
-      card.style.display = 'block';
-    } else if (card.classList.contains(category)) {
+    if (category === 'all' || card.classList.contains(category)) {
       card.style.display = 'block';
     } else {
       card.style.display = 'none';
@@ -234,11 +228,7 @@ function searchFood() {
 
   cards.forEach(card => {
     let text = card.innerText.toLowerCase();
-    if (text.includes(input)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
+    card.style.display = text.includes(input) ? "block" : "none";
   });
 }
 </script>
