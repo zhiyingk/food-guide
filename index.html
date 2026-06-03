@@ -1,7 +1,4 @@
 
-<!-- VERSION 2 -->
-``
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +20,7 @@ h1 {
   text-align: center;
 }
 
-/* SEARCH BAR */
+/* SEARCH */
 .search-box {
   text-align: center;
   margin: 20px;
@@ -34,13 +31,11 @@ h1 {
   padding: 12px;
   border-radius: 25px;
   border: 1px solid #ddd;
-  font-size: 16px;
 }
 
 /* FILTER BUTTONS */
 .filters {
   text-align: center;
-  margin-bottom: 15px;
 }
 
 .filters button {
@@ -50,7 +45,6 @@ h1 {
   border-radius: 20px;
   background: #eee;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .filters button:hover {
@@ -65,18 +59,26 @@ h1 {
   justify-content: center;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .card {
+  position: relative;
+  overflow: hidden;
   background: white;
   border-radius: 15px;
   width: 220px;
   margin: 15px;
   padding: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .card img {
@@ -84,13 +86,22 @@ h1 {
   border-radius: 10px;
 }
 
-.card h3 {
-  margin: 10px 0 5px;
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: 0.3s;
+  font-size: 14px;
 }
 
-.card p {
-  font-size: 14px;
-  color: #555;
+.card:hover .overlay {
+  transform: translateY(0);
 }
 </style>
 </head>
@@ -100,7 +111,7 @@ h1 {
 <h1>🍜 Paya Lebar Food Guide</h1>
 
 <div class="search-box">
-  <input type="text" id="searchInput" placeholder="Search for food..." onkeyup="searchFood()">
+  <input type="text" id="searchInput" placeholder="Search food..." onkeyup="searchFood()">
 </div>
 
 <div class="filters">
@@ -110,63 +121,36 @@ h1 {
   <button onclick="filterFood('beverage')">Beverage</button>
 </div>
 
-<div class="container" id="foodContainer">
+<div class="container">
 
-  <!-- MEALS -->
-  <div class="card meal">
-    <img src="https://via.placeholder.com/200">
-    <h3>Arnold's Fried Chicken</h3>
-    <p>Crispy halal fried chicken 🍗</p>
-  </div>
+  <!-- ARNOLD'S (CLICKABLE MAP) -->
+  <a href="https://www.google.com/maps/place/Arnold's+Fried+Chicken+Paya+Lebar" target="_blank">
+    <div class="card meal">
 
+      <img src="https://via.placeholder.com/200">
+
+      <h3>Arnold's Fried Chicken</h3>
+      <p>Crispy halal fried chicken 🍗</p>
+
+      <div class="overlay">
+        📍 City Plaza<br>
+        ⭐ 4.5 | 💰 $$<br>
+        Open in Google Maps
+      </div>
+
+    </div>
+  </a>
+
+  <!-- NORMAL CARD EXAMPLE -->
   <div class="card meal">
     <img src="https://via.placeholder.com/200">
     <h3>Song Fa Bak Kut Teh</h3>
-    <p>Peppery soup @ PLQ ⭐</p>
-  </div>
+    <p>Peppery soup @ PLQ</p>
 
-  <div class="card meal">
-    <img src="https://via.placeholder.com/200">
-    <h3>Nan Yang Dao</h3>
-    <p>Malaysian comfort food 🇲🇾</p>
-  </div>
-
-  <div class="card meal">
-    <img src="https://via.placeholder.com/200">
-    <h3>Eunos Chicken Rice</h3>
-    <p>Hawker classic 🔥</p>
-  </div>
-
-  <!-- SNACKS -->
-  <div class="card snack">
-    <img src="https://via.placeholder.com/200">
-    <h3>Dough Culture</h3>
-    <p>Fried dough snacks</p>
-  </div>
-
-  <div class="card snack">
-    <img src="https://via.placeholder.com/200">
-    <h3>HarriAnns Kueh</h3>
-    <p>Traditional nyonya treats</p>
-  </div>
-
-  <!-- DRINKS -->
-  <div class="card beverage">
-    <img src="https://via.placeholder.com/200">
-    <h3>Koi Thé</h3>
-    <p>Bubble tea 🧋</p>
-  </div>
-
-  <div class="card beverage">
-    <img src="https://via.placeholder.com/200">
-    <h3>Chagee</h3>
-    <p>Premium tea 🍵</p>
-  </div>
-
-  <div class="card beverage">
-    <img src="https://via.placeholder.com/200">
-    <h3>Mr Coconut</h3>
-    <p>Coconut shakes 🥥</p>
+    <div class="overlay">
+      📍 PLQ Mall<br>
+      ⭐ 4.6 | 💰 $$  
+    </div>
   </div>
 
 </div>
@@ -176,26 +160,30 @@ function filterFood(category) {
   let cards = document.querySelectorAll('.card');
 
   cards.forEach(card => {
+    let parent = card.parentElement;
+
     if (category === 'all') {
-      card.style.display = 'block';
+      parent.style.display = 'block';
     } else if (card.classList.contains(category)) {
-      card.style.display = 'block';
+      parent.style.display = 'block';
     } else {
-      card.style.display = 'none';
+      parent.style.display = 'none';
     }
   });
 }
 
 function searchFood() {
-  let input = document.getElementById('searchInput').value.toLowerCase();
-  let cards = document.querySelectorAll('.card');
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let cards = document.querySelectorAll(".card");
 
   cards.forEach(card => {
     let text = card.innerText.toLowerCase();
+    let parent = card.parentElement;
+
     if (text.includes(input)) {
-      card.style.display = "block";
+      parent.style.display = "block";
     } else {
-      card.style.display = "none";
+      parent.style.display = "none";
     }
   });
 }
