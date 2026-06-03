@@ -13,11 +13,11 @@ body {
 }
 
 h1 {
-  background: #ff6b3d;
+  background: linear-gradient(135deg, #ff7f50, #ff5722);
   color: white;
   padding: 20px;
-  margin: 0;
   text-align: center;
+  margin: 0;
 }
 
 /* SEARCH */
@@ -49,7 +49,7 @@ h1 {
 }
 
 .filters button:hover {
-  background: #ff6b3d;
+  background: #ff7f50;
   color: white;
 }
 
@@ -57,24 +57,22 @@ h1 {
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  gap: 20px;
   padding: 20px;
 }
 
 /* CARD */
 .card {
-  position: relative;
-  overflow: hidden;
   background: white;
   border-radius: 15px;
   padding: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 }
 
 /* IMAGE */
@@ -85,34 +83,34 @@ h1 {
   border-radius: 10px;
 }
 
-/* OVERLAY FIX */
-.overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.8);
-  color: white;
-  padding: 10px;
-  text-align: center;
+/* HOVER INFO BELOW */
+.hover-info {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #555;
 
-  transform: translateY(100%);
-  transition: 0.3s;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-/* SHOW OVERLAY */
-.card:hover .overlay {
-  transform: translateY(0);
+.card:hover .hover-info {
+  opacity: 1;
+  max-height: 60px;
 }
 
 /* LINK */
 .map-link {
-  color: white;
+  display: inline-block;
   margin-top: 5px;
-  font-size: 12px;
+  color: #ff5722;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.map-link:hover {
   text-decoration: underline;
 }
 </style>
@@ -135,63 +133,52 @@ h1 {
 
 <div class="container">
 
-  <!-- ARNOLD -->
+  <!-- FULL MEALS -->
   <div class="card meal">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8_o_WUIFm1WHimBRfEmkL4wl6NWWk-Ilejg&s">
-
     <h3>Arnold's Fried Chicken</h3>
-    <p>Signature crispy fried chicken 🍗</p>
+    <p>Crispy halal fried chicken 🍗</p>
 
-    <div class="overlay">
-      📍 City Plaza<br>
-      ⭐ 4.5 | 💰 $$
-      <a class="map-link" href="https://www.google.com/maps/place/Arnold's+Fried+Chicken" target="_blank">
+    <div class="hover-info">
+      📍 City Plaza | ⭐ 4.5<br>
+      <a href="https://www.google.com/maps/place/Arnold's+Fried+Chicken" target="_blank" class="map-link">
         Open in Maps
       </a>
     </div>
   </div>
 
-  <!-- SONG FA -->
   <div class="card meal">
     <img src="https://via.placeholder.com/200">
-
     <h3>Song Fa Bak Kut Teh</h3>
     <p>Peppery soup @ PLQ</p>
 
-    <div class="overlay">
+    <div class="hover-info">
       📍 PLQ Mall<br>
-      ⭐ 4.6
-      <a class="map-link" href="https://www.google.com/maps/place/Song+Fa+Bak+Kut+Teh" target="_blank">
+      <a href="https://www.google.com/maps/place/Song+Fa+Bak+Kut+Teh" target="_blank" class="map-link">
         Open in Maps
       </a>
     </div>
   </div>
 
-  <!-- LAU WANG -->
   <div class="card meal">
     <img src="https://via.placeholder.com/200">
     <h3>Lau Wang</h3>
     <p>Claypot herbal soups</p>
-    <div class="overlay">📍 SingPost Centre</div>
   </div>
 
-  <!-- NAN YANG DAO -->
   <div class="card meal">
     <img src="https://via.placeholder.com/200">
     <h3>Nan Yang Dao</h3>
     <p>Malaysian comfort food</p>
-    <div class="overlay">📍 PLQ</div>
   </div>
 
-  <!-- SIN HENG -->
   <div class="card meal">
     <img src="https://via.placeholder.com/200">
     <h3>Sin Heng BKT</h3>
     <p>Claypot bak kut teh</p>
-    <div class="overlay">📍 Nearby</div>
   </div>
 
-  <!-- SNACK -->
+  <!-- SNACKS -->
   <div class="card snack">
     <img src="https://via.placeholder.com/200">
     <h3>Dough Culture</h3>
@@ -201,7 +188,7 @@ h1 {
   <div class="card snack">
     <img src="https://via.placeholder.com/200">
     <h3>HarriAnns Kueh</h3>
-    <p>Nyonya kueh</p>
+    <p>Nyonya kueh sweets</p>
   </div>
 
   <!-- DRINKS -->
@@ -214,13 +201,19 @@ h1 {
   <div class="card beverage">
     <img src="https://via.placeholder.com/200">
     <h3>Chagee</h3>
-    <p>Premium tea</p>
+    <p>Premium tea 🍵</p>
   </div>
 
   <div class="card beverage">
     <img src="https://via.placeholder.com/200">
     <h3>Mr Coconut</h3>
-    <p>Coconut shakes</p>
+    <p>Coconut shakes 🥥</p>
+  </div>
+
+  <div class="card beverage">
+    <img src="https://via.placeholder.com/200">
+    <h3>Whampoa Soya Bean</h3>
+    <p>Traditional soy milk</p>
   </div>
 
 </div>
