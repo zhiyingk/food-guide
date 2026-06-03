@@ -1,68 +1,104 @@
-<h2>NEW VERSION ✅</h2>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Paya Lebar Food Guide</title>
+<meta charset="UTF-8">
+<title>Paya Lebar Food Guide</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      background: #f5f5f5;
-    }
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f9fafb;
+}
 
-    h1 {
-      background: #ff7f50;
-      color: white;
-      padding: 15px;
-      margin: 0;
-    }
+h1 {
+  background: linear-gradient(135deg, #ff7f50, #ff5722);
+  color: white;
+  padding: 20px;
+  margin: 0;
+  text-align: center;
+}
 
-    .filters {
-      margin: 20px;
-    }
+/* SEARCH BAR */
+.search-box {
+  text-align: center;
+  margin: 20px;
+}
 
-    .filters button {
-      margin: 5px;
-      padding: 10px 15px;
-      border: none;
-      background: #ff7f50;
-      color: white;
-      cursor: pointer;
-      border-radius: 5px;
-    }
+.search-box input {
+  width: 60%;
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
 
-    .filters button:hover {
-      background: #ff5722;
-    }
+/* FILTER BUTTONS */
+.filters {
+  text-align: center;
+  margin-bottom: 15px;
+}
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+.filters button {
+  margin: 5px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  background: #eee;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-    .card {
-      background: white;
-      border-radius: 10px;
-      width: 220px;
-      margin: 15px;
-      padding: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
+.filters button:hover {
+  background: #ff7f50;
+  color: white;
+}
 
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-  </style>
+/* CARDS */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  width: 220px;
+  margin: 15px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+}
+</style>
 </head>
 
 <body>
 
 <h1>🍜 Paya Lebar Food Guide</h1>
+
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search for food..." onkeyup="searchFood()">
+</div>
 
 <div class="filters">
   <button onclick="filterFood('all')">All</button>
@@ -71,81 +107,63 @@
   <button onclick="filterFood('beverage')">Beverage</button>
 </div>
 
-<div class="container">
+<div class="container" id="foodContainer">
 
-  <!-- FULL MEALS -->
+  <!-- MEALS -->
   <div class="card meal">
-    https://via.placeholder.com/200
+    <img src="https://via.placeholder.com/200">
     <h3>Arnold's Fried Chicken</h3>
     <p>Crispy halal fried chicken 🍗</p>
   </div>
 
   <div class="card meal">
-    https://via.placeholder.com/200
-    <h3>Lau Wang Claypot</h3>
-    <p>Herbal soups @ SingPost Centre</p>
-  </div>
-
-  <div class="card meal">
-    https://via.placeholder.com/200
-    <h3>Eunos Chicken Rice</h3>
-    <p>Classic hawker favourite</p>
-  </div>
-
-  <div class="card meal">
-    https://via.placeholder.com/200
+    <img src="https://via.placeholder.com/200">
     <h3>Song Fa Bak Kut Teh</h3>
-    <p>Peppery pork rib soup @ PLQ</p>
+    <p>Peppery soup @ PLQ ⭐</p>
   </div>
 
   <div class="card meal">
-    https://via.placeholder.com/200
+    <img src="https://via.placeholder.com/200">
     <h3>Nan Yang Dao</h3>
-    <p>Malaysian comfort food @ PLQ</p>
+    <p>Malaysian comfort food 🇲🇾</p>
   </div>
 
   <div class="card meal">
-    https://via.placeholder.com/200
-    <h3>Sin Heng Bak Kut Teh</h3>
-    <p>Claypot BKT with deep flavour</p>
+    <img src="https://via.placeholder.com/200">
+    <h3>Eunos Chicken Rice</h3>
+    <p>Hawker classic 🔥</p>
   </div>
 
   <!-- SNACKS -->
   <div class="card snack">
-    https://via.placeholder.com/200
+    <img src="https://via.placeholder.com/200">
     <h3>Dough Culture</h3>
     <p>Fried dough snacks</p>
   </div>
 
   <div class="card snack">
-    https://via.placeholder.com/200
-    <h3>HarriAnns Nyonya Kueh</h3>
-    <p>Traditional colourful kueh</p>
+    <img src="https://via.placeholder.com/200">
+    <h3>HarriAnns Kueh</h3>
+    <p>Traditional nyonya treats</p>
   </div>
 
   <!-- DRINKS -->
   <div class="card beverage">
-    https://via.placeholder.com/200
+    <img src="https://via.placeholder.com/200">
     <h3>Koi Thé</h3>
-    <p>Popular bubble tea 🧋</p>
+    <p>Bubble tea 🧋</p>
   </div>
 
   <div class="card beverage">
-    https://via.placeholder.com/200
+    <img src="https://via.placeholder.com/200">
     <h3>Chagee</h3>
-    <p>Premium tea drinks</p>
+    <p>Premium tea 🍵</p>
   </div>
 
   <div class="card beverage">
-    https://via.placeholder.com/200
+    <img src="https://via.placeholder.com/200">
     <h3>Mr Coconut</h3>
-    <p>Refreshing coconut shakes 🥥</p>
-  </div>
-
-  <div class="card beverage">
-    https://via.placeholder.com/200
-    <h3>Whampoa Soya Bean</h3>
-    <p>Fresh soy milk @ Eunos</p>
+    <p>Coconut shakes 🥥</p>
   </div>
 
 </div>
@@ -161,6 +179,20 @@ function filterFood(category) {
       card.style.display = 'block';
     } else {
       card.style.display = 'none';
+    }
+  });
+}
+
+function searchFood() {
+  let input = document.getElementById('searchInput').value.toLowerCase();
+  let cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    let text = card.innerText.toLowerCase();
+    if (text.includes(input)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
     }
   });
 }
