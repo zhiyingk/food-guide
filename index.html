@@ -20,7 +20,6 @@ h1 {
   text-align: center;
 }
 
-/* SEARCH */
 .search-box {
   text-align: center;
   margin: 20px;
@@ -33,7 +32,6 @@ h1 {
   border: 1px solid #ddd;
 }
 
-/* FILTER BUTTONS */
 .filters {
   text-align: center;
 }
@@ -52,12 +50,11 @@ h1 {
   color: white;
 }
 
-/* CARDS */
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* ✅ fixes overlap */
+  gap: 25px;
 }
 
 a {
@@ -70,11 +67,11 @@ a {
   overflow: hidden;
   background: white;
   border-radius: 15px;
-  width: 220px;
-  margin: 10px;
+  width: 230px;
   padding: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: 0.3s;
+  text-align: center;
 }
 
 .card:hover {
@@ -84,18 +81,20 @@ a {
 
 .card img {
   width: 100%;
+  height: 160px;
+  object-fit: cover;
   border-radius: 10px;
 }
 
-/* OVERLAY */
 .overlay {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.8);
   color: white;
+  padding: 10px;
   text-align: center;
-  padding: 8px;
   transform: translateY(100%);
   transition: 0.3s;
   font-size: 13px;
@@ -124,35 +123,94 @@ a {
 
 <div class="container">
 
-  <!-- ARNOLD'S (CLICKABLE ✅) -->
-  <a href="https://www.google.com/maps/place/Arnold's+Fried+Chicken+Paya+Lebar" target="_blank">
+  <!-- FULL MEALS -->
+  <a href="https://www.google.com/maps/place/Arnold's+Fried+Chicken" target="_blank">
     <div class="card meal">
-
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8_o_WUIFm1WHimBRfEmkL4wl6NWWk-Ilejg&s">
-
       <h3>Arnold's Fried Chicken</h3>
       <p>Crispy halal fried chicken 🍗</p>
-
-      <div class="overlay">
-        📍 City Plaza<br>
-        ⭐ 4.5 | 💰 $$<br>
-        Open in Google Maps
-      </div>
-
+      <div class="overlay">📍 City Plaza | ⭐ 4.5</div>
     </div>
   </a>
 
-  <!-- OTHER EXAMPLE -->
-  <div class="card meal">
-    <img src="https://via.placeholder.com/200">
-
-    <h3>Song Fa Bak Kut Teh</h3>
-    <p>Peppery soup @ PLQ</p>
-
-    <div class="overlay">
-      📍 PLQ Mall<br>
-      ⭐ 4.6 | 💰 $$
+  <a href="https://www.google.com/maps/place/Lau+Wang+Claypot+Delights" target="_blank">
+    <div class="card meal">
+      <img src="https://via.placeholder.com/200">
+      <h3>Lau Wang Claypot</h3>
+      <p>Herbal soups @ SingPost</p>
+      <div class="overlay">📍 SingPost Centre</div>
     </div>
+  </a>
+
+  <a href="https://www.google.com/maps/place/Song+Fa+Bak+Kut+Teh" target="_blank">
+    <div class="card meal">
+      <img src="https://via.placeholder.com/200">
+      <h3>Song Fa Bak Kut Teh</h3>
+      <p>Peppery soup @ PLQ</p>
+      <div class="overlay">📍 PLQ Mall</div>
+    </div>
+  </a>
+
+  <a href="https://www.google.com/maps/place/Nan+Yang+Dao" target="_blank">
+    <div class="card meal">
+      <img src="https://via.placeholder.com/200">
+      <h3>Nan Yang Dao</h3>
+      <p>Malaysian comfort food</p>
+      <div class="overlay">📍 PLQ</div>
+    </div>
+  </a>
+
+  <a href="https://www.google.com/maps/place/Sin+Heng+Bak+Kut+Teh" target="_blank">
+    <div class="card meal">
+      <img src="https://via.placeholder.com/200">
+      <h3>Sin Heng BKT</h3>
+      <p>Claypot bak kut teh</p>
+      <div class="overlay">📍 Nearby</div>
+    </div>
+  </a>
+
+  <!-- SNACKS -->
+  <div class="card snack">
+    <img src="https://via.placeholder.com/200">
+    <h3>Dough Culture</h3>
+    <p>Fried dough snacks</p>
+    <div class="overlay">📍 PLQ</div>
+  </div>
+
+  <div class="card snack">
+    <img src="https://via.placeholder.com/200">
+    <h3>HarriAnns Kueh</h3>
+    <p>Nyonya kueh sweets</p>
+    <div class="overlay">📍 PLQ</div>
+  </div>
+
+  <!-- DRINKS -->
+  <div class="card beverage">
+    <img src="https://via.placeholder.com/200">
+    <h3>Koi Thé</h3>
+    <p>Bubble tea 🧋</p>
+    <div class="overlay">📍 PLQ</div>
+  </div>
+
+  <div class="card beverage">
+    <img src="https://via.placeholder.com/200">
+    <h3>Chagee</h3>
+    <p>Premium tea 🍵</p>
+    <div class="overlay">📍 PLQ</div>
+  </div>
+
+  <div class="card beverage">
+    <img src="https://via.placeholder.com/200">
+    <h3>Mr Coconut</h3>
+    <p>Coconut shakes 🥥</p>
+    <div class="overlay">📍 PLQ</div>
+  </div>
+
+  <div class="card beverage">
+    <img src="https://via.placeholder.com/200">
+    <h3>Whampoa Soya Bean</h3>
+    <p>Traditional soy milk</p>
+    <div class="overlay">📍 Eunos Hawker</div>
   </div>
 
 </div>
@@ -193,3 +251,4 @@ function searchFood() {
 
 </body>
 </html>
+``
