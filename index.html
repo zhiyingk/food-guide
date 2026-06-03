@@ -51,3 +51,120 @@
       margin: 15px;
       padding: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🍜 Paya Lebar Food Guide</h1>
+
+<div class="filters">
+  <button onclick="filterFood('all')">All</button>
+  <button onclick="filterFood('meal')">Full Meal</button>
+  <button onclick="filterFood('snack')">Snack</button>
+  <button onclick="filterFood('beverage')">Beverage</button>
+</div>
+
+<div class="container">
+
+  <!-- FULL MEALS -->
+  <div class="card meal">
+    https://via.placeholder.com/200
+    <h3>Arnold's Fried Chicken</h3>
+    <p>Crispy halal fried chicken 🍗</p>
+  </div>
+
+  <div class="card meal">
+    https://via.placeholder.com/200
+    <h3>Lau Wang Claypot</h3>
+    <p>Herbal soups @ SingPost Centre</p>
+  </div>
+
+  <div class="card meal">
+    https://via.placeholder.com/200
+    <h3>Eunos Chicken Rice</h3>
+    <p>Classic hawker favourite</p>
+  </div>
+
+  <div class="card meal">
+    https://via.placeholder.com/200
+    <h3>Song Fa Bak Kut Teh</h3>
+    <p>Peppery pork rib soup @ PLQ</p>
+  </div>
+
+  <div class="card meal">
+    https://via.placeholder.com/200
+    <h3>Nan Yang Dao</h3>
+    <p>Malaysian comfort food @ PLQ</p>
+  </div>
+
+  <div class="card meal">
+    https://via.placeholder.com/200
+    <h3>Sin Heng Bak Kut Teh</h3>
+    <p>Claypot BKT with deep flavour</p>
+  </div>
+
+  <!-- SNACKS -->
+  <div class="card snack">
+    https://via.placeholder.com/200
+    <h3>Dough Culture</h3>
+    <p>Fried dough snacks</p>
+  </div>
+
+  <div class="card snack">
+    https://via.placeholder.com/200
+    <h3>HarriAnns Nyonya Kueh</h3>
+    <p>Traditional colourful kueh</p>
+  </div>
+
+  <!-- DRINKS -->
+  <div class="card beverage">
+    https://via.placeholder.com/200
+    <h3>Koi Thé</h3>
+    <p>Popular bubble tea 🧋</p>
+  </div>
+
+  <div class="card beverage">
+    https://via.placeholder.com/200
+    <h3>Chagee</h3>
+    <p>Premium tea drinks</p>
+  </div>
+
+  <div class="card beverage">
+    https://via.placeholder.com/200
+    <h3>Mr Coconut</h3>
+    <p>Refreshing coconut shakes 🥥</p>
+  </div>
+
+  <div class="card beverage">
+    https://via.placeholder.com/200
+    <h3>Whampoa Soya Bean</h3>
+    <p>Fresh soy milk @ Eunos</p>
+  </div>
+
+</div>
+
+<script>
+function filterFood(category) {
+  let cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    if (category === 'all') {
+      card.style.display = 'block';
+    } else if (card.classList.contains(category)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>
