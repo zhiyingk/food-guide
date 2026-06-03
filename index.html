@@ -1,81 +1,53 @@
 
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paya Lebar Food Guide</title>
 
-  <!-- FULL MEALS -->
-  <div class="card meal">
-    <img src="https://via.placeholder.com/200">
-    <h3>Arnold's Fried Chicken</h3>
-    <p>Crispy halal fried chicken, local favourite</p>
-  </div>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      background: #f5f5f5;
+    }
 
-  <div class="card meal">
-    <img src="https://via.placeholder.com/200">
-    <h3>Lau Wang Claypot Delights</h3>
-    <p>Rich herbal soups @ SingPost Centre</p>
-  </div>
+    h1 {
+      background: #ff7f50;
+      color: white;
+      padding: 15px;
+      margin: 0;
+    }
 
-  <div class="card meal">
-    <img src="https://via.placeholder.com/200">
-    <h3>Eunos Hawker Chicken Rice</h3>
-    <p>Classic hawker-style roasted & steamed chicken</p>
-  </div>
+    .filters {
+      margin: 20px;
+    }
 
-  <div class="card meal">
-    <img src="https://via.placeholder.com/200">
-    <h3>Song Fa Bak Kut Teh</h3>
-    <p>Peppery pork rib soup @ PLQ</p>
-  </div>
+    .filters button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      background: #ff7f50;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
 
-  <div class="card meal">
-    <img src="https://via.placeholder.com/200">
-    <h3>Nan Yang Dao</h3>
-    <p>Malaysian-style comfort food @ PLQ</p>
-  </div>
+    .filters button:hover {
+      background: #ff5722;
+    }
 
-  <div class="card meal">
-    <img src="https://via.placeholder.com/200">
-    <h3>Sin Heng Claypot Bak Kut Teh</h3>
-    <p>Traditional claypot BKT with deep flavour</p>
-  </div>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-
-  <!-- SNACKS -->
-  <div class="card snack">
-    <img src="https://via.placeholder.com/200">
-    <h3>Dough Culture</h3>
-    <p>Freshly fried dough sticks & snacks</p>
-  </div>
-
-  <div class="card snack">
-    <img src="https://via.placeholder.com/200">
-    <h3>HarriAnns Nyonya Kueh</h3>
-    <p>Traditional colourful kueh @ PLQ</p>
-  </div>
-
-
-  <!-- DRINKS -->
-  <div class="card beverage">
-    <img src="https://via.placeholder.com/200">
-    <h3>Koi Thé</h3>
-    <p>Popular bubble tea with golden pearls</p>
-  </div>
-
-  <div class="card beverage">
-    <img src="https://via.placeholder.com/200">
-    <h3>Chagee</h3>
-    <p>Premium Chinese tea drinks</p>
-  </div>
-
-  <div class="card beverage">
-    <img src="https://via.placeholder.com/200">
-    <h3>Mr Coconut</h3>
-    <p>Refreshing coconut shakes</p>
-  </div>
-
-  <div class="card beverage">
-    <img src="https://via.placeholder.com/200">
-    <h3>Whampoa Soya Bean</h3>
-    <p>Fresh soy milk @ Eunos Hawker</p>
-  </div>
-
-</div>
+    .card {
+      background: white;
+      border-radius: 10px;
+      width: 220px;
+      margin: 15px;
+      padding: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
