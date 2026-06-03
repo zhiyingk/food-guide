@@ -57,6 +57,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 20px; /* ✅ fixes overlap */
 }
 
 a {
@@ -70,7 +71,7 @@ a {
   background: white;
   border-radius: 15px;
   width: 220px;
-  margin: 15px;
+  margin: 10px;
   padding: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: 0.3s;
@@ -94,10 +95,10 @@ a {
   background: rgba(0,0,0,0.75);
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 8px;
   transform: translateY(100%);
   transition: 0.3s;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .card:hover .overlay {
@@ -123,11 +124,11 @@ a {
 
 <div class="container">
 
-  <!-- ARNOLD'S (CLICKABLE MAP) -->
+  <!-- ARNOLD'S (CLICKABLE ✅) -->
   <a href="https://www.google.com/maps/place/Arnold's+Fried+Chicken+Paya+Lebar" target="_blank">
     <div class="card meal">
 
-      <img src="https://via.placeholder.com/200">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8_o_WUIFm1WHimBRfEmkL4wl6NWWk-Ilejg&s">
 
       <h3>Arnold's Fried Chicken</h3>
       <p>Crispy halal fried chicken 🍗</p>
@@ -141,15 +142,16 @@ a {
     </div>
   </a>
 
-  <!-- NORMAL CARD EXAMPLE -->
+  <!-- OTHER EXAMPLE -->
   <div class="card meal">
     <img src="https://via.placeholder.com/200">
+
     <h3>Song Fa Bak Kut Teh</h3>
     <p>Peppery soup @ PLQ</p>
 
     <div class="overlay">
       📍 PLQ Mall<br>
-      ⭐ 4.6 | 💰 $$  
+      ⭐ 4.6 | 💰 $$
     </div>
   </div>
 
